@@ -1,0 +1,206 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>رفيق القرآن</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf6ea;--cd:#fff;--tx:#1f2d27;--mu:#6b7a72;--g:#0f6b4f;--g2:#e3f1ea;--gd:#b8923a;--bd:#e6dfc8;--gr:#1d9a5e;--bl:#2d6fd0;--or:#e08a1e;--rd:#d0453b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#10201a;--cd:#17302a;--tx:#eef3ee;--mu:#9bb0a5;--g:#3fc08f;--g2:#1d3d33;--gd:#d9b45a;--bd:#2a4a40}}
+:root[data-theme=dark]{--bg:#10201a;--cd:#17302a;--tx:#eef3ee;--mu:#9bb0a5;--g:#3fc08f;--g2:#1d3d33;--gd:#d9b45a;--bd:#2a4a40}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:Cairo,Tahoma,sans-serif;line-height:1.7}
+header{background:#0f6b4f;background-image:repeating-conic-gradient(#ffffff10 0 25%,transparent 0 50%);background-size:28px 28px;color:#fff;padding:12px 16px;position:sticky;top:0;z-index:5}
+header h1{margin:0;font-size:1.25rem}header small{color:#e9d9a6}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+nav{display:flex;gap:6px;overflow-x:auto;margin-top:8px}nav button{background:#ffffff1f;color:#fff;border:0;border-radius:20px;padding:6px 14px;cursor:pointer;font:inherit;white-space:nowrap}nav button.on{background:#fff;color:#0f6b4f;font-weight:700}
+select,input,textarea,button{font:inherit}select,input,textarea{background:var(--cd);color:var(--tx);border:1px solid var(--bd);border-radius:10px;padding:6px 10px;max-width:100%}
+.demo{background:#fff3cd;color:#664d03;padding:6px 16px;font-size:.85rem;text-align:center}
+main{max-width:1050px;margin:0 auto;padding:16px;animation:fi .3s}@keyframes fi{from{opacity:0;transform:translateY(6px)}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.st{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:16px;padding:14px;box-shadow:0 2px 8px #0001;transition:transform .2s}.card:hover{transform:translateY(-2px)}
+.card h3{margin:0 0 8px;color:var(--g);font-size:1.02rem}.num{font-size:1.8rem;font-weight:700;color:var(--g)}.mu{color:var(--mu);font-size:.85rem}
+.bar{height:9px;background:var(--g2);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:var(--g);border-radius:9px;animation:gw 1s}@keyframes gw{from{width:0}}
+.b{display:inline-block;padding:1px 10px;border-radius:12px;font-size:.8rem;color:#fff}.gr{background:var(--gr)}.bl{background:var(--bl)}.or{background:var(--or)}.rd{background:var(--rd)}
+.btn{background:var(--g);color:#fff;border:0;border-radius:10px;padding:7px 14px;cursor:pointer}.btn.o{background:transparent;color:var(--g);border:1px solid var(--g)}.btn.r{background:var(--rd)}.btn:disabled{opacity:.4;cursor:not-allowed}
+.li{padding:8px 0;border-bottom:1px solid var(--bd)}.li:last-child{border:0}
+.hero{background:linear-gradient(135deg,#0f6b4f,#14805e);color:#fff;border-radius:18px;padding:20px;margin-bottom:14px;border-bottom:4px solid var(--gd)}.hero h2{margin:0}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:6px}.tile{border:1px solid var(--bd);border-radius:10px;padding:4px;text-align:center;font-size:.78rem;background:var(--cd)}
+.tile.f{background:var(--g);color:#fff}.tile.p{background:#f3e3b0;color:#4a3a0a}.tile.w{border:2px solid var(--or)}
+.cal{display:flex;gap:4px;flex-wrap:wrap}.cal span{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;font-size:.8rem;background:var(--g2)}.cal .d{background:var(--gr);color:#fff}.cal .m{background:var(--rd);color:#fff}.cal .z{opacity:.5}
+.rb{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+#toast{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);z-index:20;display:grid;gap:6px}#toast div{background:#0f6b4f;color:#fff;padding:8px 16px;border-radius:12px;animation:fi .3s}#toast .e{background:var(--rd)}
+.ov{position:fixed;inset:0;background:#0008;display:grid;place-items:center;z-index:15}.ov .card{max-width:340px}
+label{display:block;margin:8px 0 2px;font-weight:600}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<header><div class="row"><div><h1>🌙 رفيق القرآن</h1><small>رحلة الحفظ والإتقان</small></div>
+<label style="margin:0;font-size:.85rem">العرض كـ <select id="who" onchange="who=this.value;go(pg)"></select></label></div><nav id="nav"></nav></header>
+<div class="demo">⚠️ وضع تجريبي: البيانات وهمية وتُحفظ في ذاكرة المتصفح فقط، ولا يوجد اتصال بقاعدة بيانات أو تخزين سحابي.</div>
+<main id="app"></main><div id="toast"></div>
+<script>
+const S="الفاتحة:7,البقرة:286,آل عمران:200,النساء:176,المائدة:120,الأنعام:165,الأعراف:206,الأنفال:75,التوبة:129,يونس:109,هود:123,يوسف:111,الرعد:43,إبراهيم:52,الحجر:99,النحل:128,الإسراء:111,الكهف:110,مريم:98,طه:135,الأنبياء:112,الحج:78,المؤمنون:118,النور:64,الفرقان:77,الشعراء:227,النمل:93,القصص:88,العنكبوت:69,الروم:60,لقمان:34,السجدة:30,الأحزاب:73,سبأ:54,فاطر:45,يس:83,الصافات:182,ص:88,الزمر:75,غافر:85,فصلت:54,الشورى:53,الزخرف:89,الدخان:59,الجاثية:37,الأحقاف:35,محمد:38,الفتح:29,الحجرات:18,ق:45,الذاريات:60,الطور:49,النجم:62,القمر:55,الرحمن:78,الواقعة:96,الحديد:29,المجادلة:22,الحشر:24,الممتحنة:13,الصف:14,الجمعة:11,المنافقون:11,التغابن:18,الطلاق:12,التحريم:12,الملك:30,القلم:52,الحاقة:52,المعارج:44,نوح:28,الجن:28,المزمل:20,المدثر:56,القيامة:40,الإنسان:31,المرسلات:50,النبأ:40,النازعات:46,عبس:42,التكوير:29,الانفطار:19,المطففين:36,الانشقاق:25,البروج:22,الطارق:17,الأعلى:19,الغاشية:26,الفجر:30,البلد:20,الشمس:15,الليل:21,الضحى:11,الشرح:8,التين:8,العلق:19,القدر:5,البينة:8,الزلزلة:8,العاديات:11,القارعة:11,التكاثر:8,العصر:3,الهمزة:9,الفيل:5,قريش:4,الماعون:7,الكوثر:3,الكافرون:6,النصر:3,المسد:5,الإخلاص:4,الفلق:5,الناس:6".split(",").map((x,i)=>{const[a,b]=x.split(":");return{id:i+1,n:a,c:+b}});
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const T=new Date(),D=o=>new Date(T.getFullYear(),T.getMonth(),T.getDate()+o),rest=o=>D(o).getDay()==5;
+const wd=(a,b)=>{let n=0;for(let i=a;i<b;i++)if(!rest(i))n++;return n};
+const fd=o=>D(o).toLocaleDateString("ar",{day:"numeric",month:"short"});
+const NEW="حفظ جديد";
+const U=[{id:1,n:"أمينة العلي",pd:10,start:-14,delta:2},{id:2,n:"خديجة سالم",pd:20,start:-10,delta:0},{id:3,n:"مريم حسن",pd:10,start:-14,delta:0},{id:4,n:"فاطمة يوسف",pd:10,start:-12,delta:-2},{id:5,n:"هدى إبراهيم",pd:15,start:-9,delta:1},{id:6,n:"سارة محمود",pd:10,start:-14,delta:-4,hide:1}];
+let R=[],RV=[{id:1,u:6,s:2,f:1,t:10,note:"يحتاج إلى تثبيت المقطع"}],nid=1,who="sup",pg="home",rank="new",prefs={ورد:1,تأخر:1,ملاحظات:1};
+const REV=[3,2,1,0,2,1];
+U.forEach((u,i)=>{u.A=Math.max(0,u.pd*(wd(u.start,0)+u.delta));const days=[];for(let d=u.start;d<=0;d++)if(!rest(d))days.push(d);
+for(let k=0;k*u.pd<u.A;k++)R.push({id:nid++,u:u.id,s:2,f:k*u.pd+1,t:Math.min((k+1)*u.pd,u.A),d:days[Math.min(k,days.length-1)],type:NEW,st:"approved",rate:3+(k+i)%3,note:k%4==0?"ما شاء الله، أداء جيد مع الحرص على أحكام المد.":""});
+for(let k=0;k<REV[i];k++)R.push({id:nid++,u:u.id,s:1,f:1,t:7,d:-1-k*2,type:"مراجعة",st:"approved",rate:4,note:""})});
+[2,3,5].forEach(i=>{const u=U[i-1];R.push({id:nid++,u:i,s:2,f:u.A+1,t:u.A+u.pd,d:0,type:NEW,st:"pending",audio:null})});
+const P=u=>U.find(x=>x.id==u);
+const mem=(u,from=-999)=>{const s=new Set();R.forEach(r=>{if(r.u==u&&r.st=="approved"&&r.type==NEW&&r.d>=from)for(let v=r.f;v<=r.t;v++)s.add(r.s+":"+v)});return s};
+const revN=u=>R.filter(r=>r.u==u&&r.st=="approved"&&r.type!=NEW).reduce((a,r)=>a+r.t-r.f+1,0);
+function stt(u){const p=P(u),a=mem(u).size,due=p.pd*wd(p.start,0),tg=p.pd*wd(p.start,1);let o;
+if(RV.some(x=>x.u==u))o=["rd","🔴 يحتاج إلى مراجعة","حددت المشرفة مقطعًا يحتاج إلى مراجعة."];
+else if(a>tg)o=["gr","🟢 متقدم",`أنجزت ${a} آية معتمدة والمطلوب حتى اليوم ${tg}.`];
+else if(a==tg)o=["bl","🔵 على المسار",`أنجزت المطلوب حتى اليوم (${tg} آية).`];
+else if(a>=due)o=["bl","🔵 على المسار",`أتممت المطلوب حتى أمس (${due})، وموعد ورد اليوم لم ينتهِ بعد.`];
+else o=["or","🟠 متأخر",`المعتمد ${a} والمطلوب حتى أمس ${due} (ينقص ${due-a}).`];
+return{k:o[0],l:o[1],r:o[2],a,tg}}
+function nxt(u){const p=P(u);let l=null;R.forEach(r=>{if(r.u==u&&r.st=="approved"&&r.type==NEW&&(!l||r.s>l.s||(r.s==l.s&&r.t>l.t)))l=r});
+let s=l?l.s:2,f=l?l.t+1:1;if(f>S[s-1].c){s++;f=1}return{s,f,t:Math.min(f+p.pd-1,S[s-1].c)}}
+const nx=u=>{const n=nxt(u);return`سورة ${S[n.s-1].n} — المطلوب اليوم: الآيات ${n.f}–${n.t}`};
+function streak(u){let n=0,d=0;const h=o=>R.some(r=>r.u==u&&r.st=="approved"&&r.type==NEW&&r.d==o);if(!h(0)&&!rest(0))d=-1;for(;d>-60;d--){if(rest(d))continue;if(h(d))n++;else break}return n}
+function met(u){const p=P(u),s=stt(u),pc=(w,from)=>Math.min(100,Math.round(mem(u,w).size/Math.max(1,p.pd*wd(Math.max(w,p.start),1))*100));
+return{new:s.a,ad:Math.min(100,Math.round(s.a/Math.max(1,s.tg)*100)),rv:revN(u),wk:pc(-6),mo:pc(-29)}}
+const bar=(p,c)=>`<div class="bar"><i style="width:${p}%${c?";background:var(--"+c+")":""}"></i></div>`;
+const bdg=s=>`<span class="b ${s.k}">${s.l}</span>`;
+const isSup=()=>who=="sup",me=()=>+who,vis=u=>!P(u).hide||isSup()||me()==u;
+const nm=u=>vis(u)?P(u).n:"مشارك مخفي";
+function toast(m,e){save();const d=document.createElement("div");d.textContent=m;if(e)d.className="e";$("#toast").append(d);setTimeout(()=>d.remove(),3500)}
+function ask(m){return new Promise(r=>{const o=document.createElement("div");o.className="ov";o.innerHTML=`<div class="card"><p>${m}</p><div class="rb"><button class="btn r" id="y">تأكيد</button><button class="btn o" id="n">إلغاء</button></div></div>`;document.body.append(o);o.querySelector("#y").onclick=()=>{o.remove();r(1)};o.querySelector("#n").onclick=()=>{o.remove();r(0)}})}
+const ranked=k=>U.map(u=>({u:u.id,m:met(u.id)})).sort((a,b)=>b.m[k]-a.m[k]||b.m.new-a.m.new);
+const unit={new:" آية",ad:"%",rv:" آية",wk:"%",mo:"%"};
+const RN={new:"الحفظ الجديد المعتمد",ad:"الالتزام بالخطة",rv:"المراجعة المنتظمة",wk:"الإنجاز الأسبوعي",mo:"الإنجاز الشهري"};
+const medal=i=>["🥇","🥈","🥉"][i]||i+1;
+function lb(k,n){return ranked(k).slice(0,n||99).map((x,i)=>`<div class="li row"><span>${medal(i)} ${esc(nm(x.u))}</span><b>${x.m[k]}${unit[k]}</b></div>`).join("")}
+function pages(){return isSup()?{home:"الرئيسية",follow:"متابعة المشاركين",queue:"طابور المراجعة",board:"لوحة الشرف",notif:"الإشعارات",manage:"إدارة البيانات"}:{home:"الرئيسية",mine:"لوحتي",track:"سجل الحفظ",rec:"تسميع جديد",board:"لوحة الشرف",notif:"الإشعارات"}}
+function go(p){const m=pages();pg=m[p]?p:"home";$("#nav").innerHTML=Object.entries(m).map(([k,v])=>`<button class="${k==pg?"on":""}" onclick="go('${k}')">${v}${k=="queue"?" ("+R.filter(r=>r.st=="pending").length+")":""}</button>`).join("");
+$("#app").innerHTML=({home,follow,queue,board,notif,mine,track,manage,rec:recPage})[pg]();save();$("#app").style.animation="none";$("#app").offsetWidth;$("#app").style.animation="";if(pg=="rec")recUI(),sChg()}
+function home(){const g=(isSup()?U.map(u=>u.id):[me()]);const all=U.map(u=>stt(u.id));
+const done=U.reduce((a,u)=>a+mem(u.id).size,0),av=Math.round(U.reduce((a,u)=>a+met(u.id).ad,0)/Math.max(1,U.length)),late=U.filter(u=>stt(u.id).k=="or");
+return`<div class="hero"><h2>رفيق القرآن</h2><p>رحلتك مع القرآن تبدأ بآية 🌿</p>${isSup()?"<p>أهلًا بكِ يا أستاذة، لديك "+R.filter(r=>r.st=="pending").length+" تسميعات بانتظار المراجعة.</p>":`<p><b>ورد اليوم:</b> ${nx(me())}</p><button class="btn" style="background:var(--gd)" onclick="go('rec')">🎙️ سجّل تسميعك</button>`}</div>
+<div class="grid st"><div class="card"><div class="mu">المشاركون</div><div class="num">${U.length}</div></div><div class="card"><div class="mu">جلسات التسميع</div><div class="num">${R.length}</div></div><div class="card"><div class="mu">آيات منجزة (معتمدة)</div><div class="num">${done}</div></div><div class="card"><div class="mu">الالتزام بالخطة</div><div class="num">${av}%</div></div><div class="card"><div class="mu">أيام الاستمرار</div><div class="num">${isSup()?Math.max(0,...U.map(u=>streak(u.id))):streak(me())}</div></div></div><br>
+<div class="grid"><div class="card"><h3>تقدم حلقة التحفيظ</h3>${U.map(u=>{const s=stt(u.id);return`<div class="li"><div class="row"><span>${esc(nm(u.id))}</span>${bdg(s)}</div>${bar(Math.min(100,Math.round(s.a/Math.max(1,s.tg)*100)),s.k)}</div>`}).join("")}</div>
+<div class="card"><h3>آخر جلسات التسميع</h3>${[...R].sort((a,b)=>b.d-a.d||b.id-a.id).slice(0,6).map(r=>`<div class="li">${esc(nm(r.u))} — ${S[r.s-1].n} ${r.f}–${r.t}<br><span class="mu">${r.type} • ${fd(r.d)} • ${{approved:"معتمد",pending:"بانتظار التقييم",rejected:"مرفوض"}[r.st]}</span></div>`).join("")}</div>
+<div class="card"><h3>ترتيب المشاركين</h3>${lb("new",3)}</div><div class="card"><h3>المشاركون الأكثر التزامًا</h3>${lb("ad",3)}</div>
+<div class="card"><h3>الأشخاص المتأخرون عن الخطة</h3>${late.length?late.map(u=>`<div class="li">${esc(nm(u.id))}<br><span class="mu">${stt(u.id).r}</span></div>`).join(""):"<p class='mu'>لا يوجد متأخرون 🎉</p>"}</div>
+<div class="card"><h3>ورد اليوم</h3>${g.map(u=>`<div class="li">${isSup()?esc(nm(u))+": ":""}${nx(u)}</div>`).join("")}<p class="mu">لم يُدرج نص القرآن في هذه النسخة؛ يُوصى بربط مصدر نصّي موثوق ومعتمد.</p></div></div>`}
+function mine(){const u=me(),s=stt(u),m=met(u),n=mem(u),cnt={};n.forEach(k=>{const i=k.split(":")[0];cnt[i]=(cnt[i]||0)+1});
+const full=S.filter(x=>cnt[x.id]==x.c),l=R.filter(r=>r.u==u&&r.st=="approved"&&r.type==NEW).sort((a,b)=>b.s-a.s||b.t-a.t)[0];
+const cal=[];for(let d=-13;d<=0;d++){const h=R.some(r=>r.u==u&&r.st=="approved"&&r.type==NEW&&r.d==d);cal.push(`<span class="${rest(d)?"z":h?"d":d==0?"":"m"}" title="${fd(d)}">${rest(d)?"·":h?"✓":d==0?"…":"✗"}</span>`)}
+return`<div class="grid"><div class="card"><h3>حالتي</h3>${bdg(s)}<p>${s.r}</p><p><b>${nx(u)}</b></p></div>
+<div class="card"><h3>إنجازي</h3><div class="num">${s.a}</div><div class="mu">آية محفوظة ومعتمدة • مراجعة منفصلة: ${m.rv}</div><p>سور مكتملة: ${full.length?full.map(x=>x.n).join("، "):"لا يوجد بعد"}<br>آخر موضع: ${l?S[l.s-1].n+" آية "+l.t:"—"}</p></div>
+<div class="card"><h3>الخطة</h3><div class="mu">الأسبوعي ${m.wk}%</div>${bar(m.wk)}<div class="mu">الشهري ${m.mo}%</div>${bar(m.mo)}<p class="mu">${P(u).pd} آيات/يوم، الجمعة راحة</p></div></div><br>
+<div class="grid"><div class="card"><h3>سجل الالتزام (14 يومًا)</h3><div class="cal">${cal.join("")}</div><p class="mu">✓ منجز • ✗ فائت • … اليوم • · راحة</p></div>
+<div class="card"><h3>مقاطع تحتاج مراجعة</h3>${RV.filter(x=>x.u==u).map(x=>`<div class="li">${S[x.s-1].n} ${x.f}–${x.t}<br><span class="mu">${esc(x.note)}</span></div>`).join("")||"<p class='mu'>لا يوجد</p>"}</div>
+<div class="card"><h3>تسجيلاتي وتقييماتي</h3>${R.filter(r=>r.u==u).sort((a,b)=>b.d-a.d).slice(0,8).map(r=>`<div class="li">${S[r.s-1].n} ${r.f}–${r.t} (${r.type}) ${r.st=="pending"?"⏳":r.st=="rejected"?"❌":"⭐".repeat(r.rate||0)}<br>${r.audio?`<audio controls src="${r.audio}" style="width:100%"></audio>`:""}${r.note?`<span class="mu">${esc(r.note)}</span>`:""}</div>`).join("")}</div>
+<div class="card"><h3>الخصوصية</h3><label><input type="checkbox" ${P(u).hide?"checked":""} onchange="hideMe(this.checked)"> إخفاء تقدمي من لوحة الشرف</label></div></div>`}
+function track(){const u=me(),n=mem(u),cnt={};n.forEach(k=>{const i=k.split(":")[0];cnt[i]=(cnt[i]||0)+1});
+return`<div class="card"><h3>خريطة السور — ${esc(P(u).n)}</h3><p class="mu"><span class="b" style="background:var(--g)">محفوظة</span> <span class="b" style="background:#c9a640">جزئية</span> <span class="b" style="background:var(--or)">بانتظار المراجعة</span></p><div class="tiles">${S.map(s=>{const c=cnt[s.id]||0,w=RV.some(x=>x.u==u&&x.s==s.id);return`<div class="tile ${c==s.c?"f":c?"p":""} ${w?"w":""}" title="${s.c} آية">${s.id}. ${s.n}<br>${c?c+"/"+s.c:s.c+" آية"}</div>`}).join("")}</div></div>`}
+function board(){return`<div class="card"><h3>لوحة الشرف</h3><label>معيار الترتيب <select onchange="rank=this.value;go('board')">${Object.entries(RN).map(([k,v])=>`<option value="${k}" ${k==rank?"selected":""}>${v}</option>`).join("")}</select></label>${lb(rank)}<p class="mu">الترتيب لا يعتمد على إجمالي الآيات فقط، ويُحتسب من التسميعات المعتمدة ويتحدّث فور اعتماد تسميع. يمكن للمشارك إخفاء اسمه من صفحة «لوحتي».</p></div>`}
+function follow(){return`<div class="card" style="overflow-x:auto"><h3>متابعة المشاركين</h3>${U.map(u=>{const s=stt(u.id),m=met(u.id);return`<div class="li"><div class="row"><b>${u.n}</b>${bdg(s)}</div><span class="mu">${s.r}<br>${nx(u.id)} • أسبوعي ${m.wk}% • شهري ${m.mo}% • مراجعة ${m.rv}</span></div>`}).join("")}<p class="mu">تصدير CSV/PDF وإدارة الحلقات والخطط غير متوفرة في هذه النسخة.</p></div>`}
+function queue(){const q=R.filter(r=>r.st=="pending");return`<div class="grid">${q.map(r=>`<div class="card"><h3>${esc(P(r.u).n)}</h3><p>${S[r.s-1].n} ${r.f}–${r.t} • ${r.type}</p>${r.audio?`<audio controls src="${r.audio}" style="width:100%"></audio>`:"<p class='mu'>لا يوجد تسجيل مرفق (بيانات تجريبية)</p>"}
+<label>التقييم <select id="rt${r.id}"><option>5</option><option>4</option><option selected>3</option><option>2</option><option>1</option></select></label><label>ملاحظات</label><textarea id="nt${r.id}" rows="2" style="width:100%"></textarea>
+<div class="rb"><button class="btn" onclick="ev(${r.id},'approved')">اعتماد</button><button class="btn r" onclick="ev(${r.id},'rejected')">رفض</button><button class="btn o" onclick="flag(${r.id})">تعيين للمراجعة</button></div></div>`).join("")||"<div class='card'>لا توجد تسميعات بانتظار التقييم ✅</div>"}</div><br>
+<div class="card"><h3>مقاطع المراجعة المفتوحة</h3>${RV.map(x=>`<div class="li row"><span>${P(x.u).n}: ${S[x.s-1].n} ${x.f}–${x.t}</span><button class="btn o" onclick="closeRV(${x.id})">إغلاق</button></div>`).join("")||"<p class='mu'>لا يوجد</p>"}</div>`}
+async function ev(i,st){const r=R.find(x=>x.id==i);if(st=="rejected"&&!await ask("رفض هذا التسميع؟ لن يُحتسب في التقدم."))return;r.st=st;r.rate=+$("#rt"+i).value;r.note=$("#nt"+i).value;toast(st=="approved"?"تم الاعتماد وتحدّث التقدم والترتيب":"تم الرفض");go("queue")}
+function flag(i){const r=R.find(x=>x.id==i);RV.push({id:Date.now(),u:r.u,s:r.s,f:r.f,t:r.t,note:$("#nt"+i).value||"يحتاج إلى مراجعة"});toast("عُيّن المقطع للمراجعة");go("queue")}
+function notif(){const L=[];(isSup()?U.map(u=>u.id):[me()]).forEach(u=>{const s=stt(u),a=isSup()?P(u).n+": ":"";if(prefs.ورد&&!isSup())L.push("⏰ "+nx(u));if(prefs.تأخر&&s.k=="or")L.push("🟠 "+a+"التأخر عن الخطة — "+s.r);if(s.k=="rd")L.push("🔴 "+a+"مقاطع تحتاج مراجعة");if(prefs.ملاحظات&&!isSup())R.filter(r=>r.u==u&&r.note).slice(-2).forEach(r=>L.push("💬 ملاحظة المعلمة: "+esc(r.note)));if(s.a>=100)L.push("🏅 "+a+"إنجاز: أكثر من 100 آية معتمدة")});
+if(isSup())L.unshift("📥 "+R.filter(r=>r.st=="pending").length+" تسميعات بانتظار التقييم");
+return`<div class="card"><h3>الإشعارات</h3>${L.map(x=>`<div class="li">${x}</div>`).join("")}</div><br><div class="card"><h3>تفضيلات التذكير</h3>${Object.keys(prefs).map(k=>`<label><input type="checkbox" ${prefs[k]?"checked":""} onchange="prefs['${k}']=this.checked?1:0"> ${k}</label>`).join("")}<p class="mu">الإشعارات داخل التطبيق فقط؛ البريد والإشعارات الفورية غير مفعّلة.</p></div>`}
+let rc={mr:0,ch:[],blob:0,url:0,t:0,iv:0,st:"idle",sm:0};
+function recPage(){const n=nxt(me());return`<div class="grid"><div class="card"><h3>بيانات التسميع</h3><label>السورة</label><select id="fs" onchange="sChg()">${S.map(s=>`<option value="${s.id}" ${s.id==n.s?"selected":""}>${s.id}. ${s.n}</option>`).join("")}</select>
+<label>من الآية</label><input id="ff" type="number" min="1" value="${n.f}"><label>إلى الآية</label><input id="ft" type="number" min="1" value="${n.t}"><p class="mu" id="hint"></p>
+<label>نوع التسميع</label><select id="fy"><option>${NEW}</option><option>مراجعة</option><option>تثبيت</option></select></div>
+<div class="card"><h3>التسجيل الصوتي</h3><p>الحالة: <b id="rs"></b> • المدة: <b id="rt">00:00</b></p><div class="rb"><button class="btn" id="b1" onclick="rStart()">🎙️ بدء التسجيل</button><button class="btn o" id="b2" onclick="rPause()">⏸️ إيقاف مؤقت</button><button class="btn o" id="b3" onclick="rStop()">■ إنهاء</button></div>
+<audio id="pl" controls style="width:100%;display:none"></audio><div class="rb"><button class="btn o" id="b4" onclick="rRedo()">🔄 إعادة التسجيل</button><button class="btn r" id="b5" onclick="rDel()">🗑️ حذف</button><button class="btn" id="b6" onclick="send()">📤 إرسال التسميع</button></div>
+<p class="mu">الحد الأقصى 10 ميغابايت. في الوضع التجريبي يبقى التسجيل في ذاكرة المتصفح ولا يُرفع إلى أي خادم. لا يوجد تصحيح آلي للتلاوة أو التجويد.</p></div></div>`}
+function sChg(){const s=S[$("#fs").value-1];$("#ff").max=$("#ft").max=s.c;$("#hint").textContent=`سورة ${s.n}: الآيات الصالحة من 1 إلى ${s.c}`}
+function recUI(){const s=rc.st,L={idle:"جاهز",rec:"جارٍ التسجيل…",pause:"متوقف مؤقتًا",ready:"تم التسجيل — استمع قبل الإرسال"};$("#rs").textContent=L[s];const m=Math.floor(rc.t/60),x=rc.t%60;$("#rt").textContent=String(m).padStart(2,0)+":"+String(x).padStart(2,0);
+$("#b1").disabled=s!="idle";$("#b2").disabled=!(s=="rec"||s=="pause");$("#b2").textContent=s=="pause"?"▶️ استئناف":"⏸️ إيقاف مؤقت";$("#b3").disabled=!(s=="rec"||s=="pause");$("#b4").disabled=s!="ready";$("#b5").disabled=s!="ready";$("#b6").disabled=s!="ready";
+const p=$("#pl");p.style.display=s=="ready"?"block":"none";if(s=="ready"&&p.src!=rc.url)p.src=rc.url}
+async function rStart(){if(!navigator.mediaDevices||!window.MediaRecorder)return toast("المتصفح لا يدعم التسجيل الصوتي",1);
+try{const st=await navigator.mediaDevices.getUserMedia({audio:true});rc.sm=st;rc.ch=[];rc.mr=new MediaRecorder(st);rc.mr.ondataavailable=e=>e.data.size&&rc.ch.push(e.data);
+rc.mr.onstop=()=>{clearInterval(rc.iv);st.getTracks().forEach(t=>t.stop());rc.blob=new Blob(rc.ch,{type:rc.mr.mimeType});rc.url=URL.createObjectURL(rc.blob);rc.st="ready";recUI()};
+rc.mr.start();rc.t=0;rc.st="rec";rc.iv=setInterval(()=>{if(rc.st=="rec"){rc.t++;recUI()}},1000);recUI()}
+catch(e){toast(e.name=="NotAllowedError"?"تم رفض إذن الميكروفون؛ فعّله من إعدادات المتصفح":"تعذّر بدء التسجيل: "+e.message,1)}}
+function rPause(){if(rc.st=="rec"){rc.mr.pause();rc.st="pause"}else{rc.mr.resume();rc.st="rec"}recUI()}
+function rStop(){rc.mr.stop()}
+function rDel(){if(rc.url)URL.revokeObjectURL(rc.url);rc.blob=rc.url=0;rc.t=0;rc.st="idle";const p=$("#pl");p&&p.removeAttribute("src");recUI()}
+function rRedo(){rDel();rStart()}
+function send(){const s=+$("#fs").value,f=+$("#ff").value,t=+$("#ft").value,ty=$("#fy").value,mx=S[s-1].c;
+if(!Number.isInteger(f)||!Number.isInteger(t)||f<1||t<f||t>mx)return toast(`نطاق غير صالح: سورة ${S[s-1].n} فيها ${mx} آية`,1);
+if(!rc.blob)return toast("سجّل تلاوتك أولًا",1);if(rc.blob.size>10*1048576)return toast("حجم التسجيل يتجاوز 10 ميغابايت",1);
+if(R.some(r=>r.u==me()&&r.s==s&&r.f==f&&r.t==t&&r.type==ty&&r.st!="rejected"))return toast("هذا التسميع مسجّل مسبقًا",1);
+R.push({id:nid++,u:me(),s,f,t,d:0,type:ty,st:"pending",audio:rc.url});rc.blob=rc.url=0;rc.t=0;rc.st="idle";toast("أُضيف التسميع للعرض التجريبي (حفظ محلي فقط، لا رفع سحابي)");go("mine")}
+let sup="نورة",mu=0;
+const cl=s=>String(s).replace(/[<>&"]/g,"").trim(),dn=()=>Math.round(Date.UTC(T.getFullYear(),T.getMonth(),T.getDate())/864e5);
+function save(){try{localStorage.setItem("rq1",JSON.stringify({U,R:R.map(r=>({...r,audio:null})),RV,nid,prefs,sup,day:dn()}))}catch(e){}}
+function load(){try{const s=JSON.parse(localStorage.getItem("rq1")||"null");if(!s)return;const k=dn()-s.day;U.length=0;U.push(...s.U.map(u=>({...u,start:u.start-k})));R=s.R.map(r=>({...r,d:r.d-k}));RV=s.RV;nid=s.nid;prefs=s.prefs;sup=s.sup}catch(e){}}
+function fillWho(){if(who!="sup"&&!P(+who))who="sup";$("#who").innerHTML=`<option value="sup">المشرفة (${sup})</option>`+U.map(u=>`<option value="${u.id}">${u.n}</option>`).join("");$("#who").value=who}
+const rrow=r=>`<div class="li"><div class="rb"><select id="xs${r.id}">${S.map(s=>`<option value="${s.id}" ${s.id==r.s?"selected":""}>${s.n}</option>`).join("")}</select> من <input id="xf${r.id}" type="number" min="1" value="${r.f}" style="width:70px"> إلى <input id="xt${r.id}" type="number" min="1" value="${r.t}" style="width:70px"><select id="xy${r.id}">${[NEW,"مراجعة","تثبيت"].map(t=>`<option ${t==r.type?"selected":""}>${t}</option>`).join("")}</select><select id="xz${r.id}">${[["approved","معتمد"],["pending","بانتظار التقييم"],["rejected","مرفوض"]].map(([k,v])=>`<option value="${k}" ${k==r.st?"selected":""}>${v}</option>`).join("")}</select></div><div class="rb">قبل <input id="xd${r.id}" type="number" min="0" value="${-r.d}" style="width:60px"> يوم • تقييم <input id="xr${r.id}" type="number" min="0" max="5" value="${r.rate||0}" style="width:55px"><input id="xn${r.id}" placeholder="ملاحظة" value="${esc(r.note||"")}"><button class="btn" onclick="saveR(${r.id})">حفظ</button><button class="btn r" onclick="delR(${r.id})">حذف</button></div></div>`;
+function manage(){if(!mu||!P(mu))mu=U[0]?U[0].id:0;
+return`<div class="grid"><div class="card"><h3>اسم المشرفة</h3><input id="sn" value="${sup}"> <button class="btn" onclick="sup=cl($('#sn').value)||'المشرفة';fillWho();toast('تم الحفظ');go('manage')">حفظ</button></div>
+<div class="card"><h3>➕ إضافة مشاركة</h3><label>الاسم</label><input id="an"><label>آيات الورد اليومي</label><input id="ap" type="number" min="1" value="10"><label>بدأت الخطة قبل (أيام)</label><input id="as" type="number" min="0" value="0"><div class="rb"><button class="btn" onclick="addU()">إضافة</button></div></div>
+<div class="card"><h3>البيانات</h3><p class="mu">تُحفظ تعديلاتك تلقائيًا في هذا المتصفح فقط.</p><div class="rb"><button class="btn r" onclick="wipe()">🗑️ حذف كل البيانات</button><button class="btn o" onclick="reset()">↺ استعادة التجريبية</button></div></div></div><br>
+<div class="card"><h3>المشاركات والخطط</h3>${U.map(u=>`<div class="li row"><input id="n${u.id}" value="${u.n}"><label style="margin:0">ورد/يوم <input id="p${u.id}" type="number" min="1" value="${u.pd}" style="width:70px"></label><label style="margin:0">بدأت قبل (أيام) <input id="s${u.id}" type="number" min="0" value="${-u.start}" style="width:70px"></label><span><button class="btn" onclick="saveU(${u.id})">حفظ</button> <button class="btn r" onclick="delU(${u.id})">حذف</button></span></div>`).join("")||"<p class='mu'>لا توجد مشاركات، أضف أول مشاركة.</p>"}</div><br>
+<div class="card"><h3>سجلات الحفظ</h3><div class="rb"><select onchange="mu=+this.value;go('manage')">${U.map(u=>`<option value="${u.id}" ${u.id==mu?"selected":""}>${u.n}</option>`).join("")}</select><button class="btn" onclick="addR()">➕ سجل جديد</button></div>${R.filter(r=>r.u==mu).sort((a,b)=>b.d-a.d||b.id-a.id).map(rrow).join("")||"<p class='mu'>لا توجد سجلات</p>"}</div>`}
+function addU(){const n=cl($("#an").value),p=+$("#ap").value,s=+$("#as").value;if(!n||!(p>=1)||!(s>=0))return toast("أدخل اسمًا وورد يوميًا صحيحين",1);const id=Math.max(0,...U.map(u=>u.id))+1;U.push({id,n,pd:Math.round(p),start:-Math.round(s)});mu=id;fillWho();toast("تمت الإضافة");go("manage")}
+function saveU(i){const u=P(i),n=cl($("#n"+i).value),p=+$("#p"+i).value,s=+$("#s"+i).value;if(!n||!(p>=1)||!(s>=0))return toast("بيانات غير صالحة",1);Object.assign(u,{n,pd:Math.round(p),start:-Math.round(s)});fillWho();toast("تم حفظ التعديل");go("manage")}
+async function delU(i){if(!await ask("حذف المشاركة وكل سجلاتها؟"))return;U.splice(U.findIndex(u=>u.id==i),1);R=R.filter(r=>r.u!=i);RV=RV.filter(x=>x.u!=i);fillWho();toast("تم الحذف");go("manage")}
+function addR(){if(!mu)return toast("أضف مشاركة أولًا",1);const n=nxt(mu);R.push({id:nid++,u:mu,s:n.s,f:n.f,t:n.t,d:0,type:NEW,st:"approved",rate:3,note:""});toast("أُضيف سجل");go("manage")}
+function saveR(i){const r=R.find(x=>x.id==i),g=k=>$("#x"+k+i).value,s=+g("s"),f=+g("f"),t=+g("t");if(!(f>=1&&t>=f&&t<=S[s-1].c))return toast(`نطاق غير صالح: سورة ${S[s-1].n} فيها ${S[s-1].c} آية`,1);Object.assign(r,{s,f,t,type:g("y"),st:g("z"),d:-Math.max(0,Math.round(+g("d"))),rate:+g("r"),note:g("n")});toast("تم حفظ السجل");go("manage")}
+async function delR(i){if(!await ask("حذف هذا السجل؟"))return;R=R.filter(r=>r.id!=i);toast("تم الحذف");go("manage")}
+async function wipe(){if(!await ask("حذف كل المشاركات والسجلات؟ لا يمكن التراجع."))return;U.length=0;R=[];RV=[];who="sup";fillWho();toast("تم حذف كل البيانات");go("manage")}
+async function reset(){if(!await ask("استعادة البيانات التجريبية الأصلية؟ ستفقد تعديلاتك."))return;try{localStorage.removeItem("rq1")}catch(e){}location.reload()}
+let live=false,TOK="",ix={},kk=1,GR=[],NT=[];try{TOK=localStorage.getItem("rqt")||""}catch(e){}
+const off=s=>Math.round((Date.parse(s)-Date.UTC(T.getFullYear(),T.getMonth(),T.getDate()))/864e5);
+const iso=o=>{const d=D(o);return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,0)+"-"+String(d.getDate()).padStart(2,0)};
+const ER=e=>toast(e.message||String(e),1);
+function hideMe(v){P(me()).hide=v?1:0;toast("تم تحديث إعداد الظهور")}
+async function api(p,o={}){const h={};if(TOK)h.Authorization="Bearer "+TOK;let b=o.body;if(b&&!(b instanceof FormData)){h["Content-Type"]="application/json";b=JSON.stringify(b)}
+const r=await fetch("/api/"+p,{method:o.m||(b?"POST":"GET"),headers:h,body:b}),j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||"خطأ في الخادم ("+r.status+")");return j}
+async function A(p,o,msg,pg){try{await api(p,o);await pull();toast(msg);go(pg)}catch(e){ER(e)}}
+async function pull(){try{const s=await api("state");U.length=0;
+s.users.forEach(p=>{ix[p.id]=ix[p.id]||kk++;const l=s.plans.find(x=>x.userId==p.id);U.push({id:ix[p.id],uuid:p.id,n:cl(p.name)||"مشارك",pd:l?l.perDay:10,start:l?off(l.startDate):0,hide:p.hide?1:0})});
+R=s.records.filter(r=>ix[r.userId]).map(r=>({id:kk++,rid:r.id,u:ix[r.userId],s:r.surah,f:r.fromA,t:r.toA,d:off(r.date),type:r.type,st:r.status,rate:r.rating,note:r.notes||"",audio:r.audio}));
+RV=s.revisions.filter(x=>ix[x.userId]).map(x=>({id:kk++,rid:x.id,u:ix[x.userId],s:x.surah,f:x.fromA,t:x.toA,note:x.note||""}));
+GR=s.groups;NT=s.notifications;return s.me}catch(e){ER(e);return null}}
+function authUI(){document.body.insertAdjacentHTML("beforeend",`<div class="ov" id="au"><div class="card" style="width:340px"><h3>🌙 رفيق القرآن</h3><label>الاسم (للتسجيل)</label><input id="aN"><label>البريد</label><input id="aE" type="email"><label>كلمة المرور</label><input id="aP" type="password"><div class="rb"><button class="btn" onclick="auth('in')">دخول</button><button class="btn o" onclick="auth('up')">حساب جديد</button><button class="btn o" onclick="auth('rs')">نسيت كلمة المرور</button></div><p class="mu" id="am"></p></div></div>`)}
+async function auth(k){const m=$("#am");m.textContent="";if(k=="rs")return m.textContent="الاستعادة بالبريد غير مفعّلة. اطلبي من المدير تعيين كلمة مرور جديدة.";
+try{const j=await api(k=="up"?"register":"login",{body:{name:$("#aN").value,email:$("#aE").value,password:$("#aP").value}});TOK=j.token;try{localStorage.setItem("rqt",TOK)}catch(e){}$("#au").remove();enter()}catch(e){m.textContent=e.message}}
+function out(){try{localStorage.removeItem("rqt")}catch(e){}location.reload()}
+async function enter(){const p=await pull();if(!p)return authUI();sup=cl(p.name);who=p.role!="participant"?"sup":String(ix[p.id]);
+$("#who").parentNode.innerHTML=`<span>${esc(sup)} (${{admin:"مدير",supervisor:"مشرفة",participant:"مشاركة"}[p.role]})</span> <button class="btn o" style="color:#fff;border-color:#fff" onclick="out()">خروج</button>`;go("home")}
+const mkG=()=>{const n=cl($("#gn").value);if(!n)return toast("أدخلي اسم الحلقة",1);A("groups",{body:{name:n}},"تم إنشاء الحلقة","manage")};
+const addM=()=>{const g=$("#gs").value,e=$("#ge").value.trim();if(!g||!e)return toast("اختاري الحلقة وأدخلي البريد",1);A("groups/"+g+"/members",{body:{email:e}},"تمت إضافة المشاركة","manage")};
+function closeRV(i){if(!live){RV=RV.filter(y=>y.id!=i);toast("تم إغلاق المراجعة");return go("queue")}A("revisions/"+RV.find(y=>y.id==i).rid+"/close",{body:{}},"تم إغلاق المراجعة","queue")}
+function liveInit(){fillWho=()=>{};save=()=>{};
+hideMe=v=>A("me",{m:"PUT",body:{hide:v}},"تم تحديث إعداد الظهور","mine");
+send=async function(){const s=+$("#fs").value,f=+$("#ff").value,t=+$("#ft").value,ty=$("#fy").value,mx=S[s-1].c;
+if(!Number.isInteger(f)||!Number.isInteger(t)||f<1||t<f||t>mx)return toast(`نطاق غير صالح: سورة ${S[s-1].n} فيها ${mx} آية`,1);
+if(!rc.blob)return toast("سجّلي تلاوتك أولًا",1);if(rc.blob.size>10*1048576)return toast("حجم التسجيل يتجاوز 10 ميغابايت",1);
+if(R.some(r=>r.u==me()&&r.s==s&&r.f==f&&r.t==t&&r.type==ty&&r.st!="rejected"))return toast("هذا التسميع مسجّل مسبقًا",1);
+const b=$("#b6");b.disabled=true;toast("جارٍ الرفع إلى الخادم…");const fd=new FormData(),ct=(rc.blob.type||"audio/webm").split(";")[0];
+fd.append("surah",s);fd.append("from",f);fd.append("to",t);fd.append("type",ty);fd.append("duration",rc.t);fd.append("audio",rc.blob,"r."+ct.split("/")[1]);
+try{await api("submit",{body:fd})}catch(e){b.disabled=false;return ER(e)}
+rc.blob=rc.url=0;rc.t=0;rc.st="idle";await pull();toast("✅ استلم الخادم التسميع وهو بانتظار تقييم المشرفة");go("mine")};
+ev=async function(i,st){const r=R.find(x=>x.id==i);if(st=="rejected"&&!await ask("رفض هذا التسميع؟ لن يُحتسب في التقدم."))return;
+A("records/"+r.rid+"/evaluate",{body:{status:st,rating:+$("#rt"+i).value,note:$("#nt"+i).value}},st=="approved"?"تم الاعتماد":"تم الرفض","queue")};
+flag=function(i){const r=R.find(x=>x.id==i);A("revisions",{body:{userId:P(r.u).uuid,surah:r.s,from:r.f,to:r.t,note:$("#nt"+i).value||"يحتاج إلى مراجعة"}},"عُيّن المقطع للمراجعة","queue")};
+saveU=function(i){const p=Math.round(+$("#p"+i).value),s=Math.round(+$("#s"+i).value);if(!(p>=1)||!(s>=0))return toast("بيانات غير صالحة",1);A("plan",{m:"PUT",body:{userId:P(i).uuid,perDay:p,startDate:iso(-s)}},"تم حفظ الخطة","manage")};
+delU=async function(i){if(!await ask("إزالة المشاركة من حلقاتك؟ (لا يُحذف حسابها)"))return;A("members/"+P(i).uuid,{m:"DELETE"},"تمت الإزالة","manage")};
+addR=function(){if(!mu)return toast("لا توجد مشاركة",1);const n=nxt(mu);A("records",{body:{userId:P(mu).uuid,surah:n.s,from:n.f,to:n.t,type:NEW,status:"approved",rating:3,date:iso(0)}},"أُضيف سجل","manage")};
+saveR=function(i){const r=R.find(x=>x.id==i),g=k=>$("#x"+k+i).value,s=+g("s"),f=+g("f"),t=+g("t");if(!(f>=1&&t>=f&&t<=S[s-1].c))return toast(`نطاق غير صالح: سورة ${S[s-1].n} فيها ${S[s-1].c} آية`,1);
+A("records/"+r.rid,{m:"PUT",body:{surah:s,from:f,to:t,type:g("y"),status:g("z"),date:iso(-Math.max(0,Math.round(+g("d")))),rating:+g("r")||null,notes:g("n")}},"تم حفظ السجل","manage")};
+delR=async function(i){if(!await ask("حذف هذا السجل؟"))return;A("records/"+R.find(x=>x.id==i).rid,{m:"DELETE"},"تم الحذف","manage")};
+const _mg=manage;manage=function(){const h=_mg();return`<div class="grid"><div class="card"><h3>➕ إنشاء حلقة</h3><input id="gn" placeholder="اسم الحلقة"><div class="rb"><button class="btn" onclick="mkG()">إنشاء</button></div><p class="mu">حلقاتك: ${GR.map(g=>esc(g.name)).join("، ")||"لا يوجد"}</p></div><div class="card"><h3>إضافة مشاركة مسجّلة إلى حلقة</h3><select id="gs">${GR.map(g=>`<option value="${g.id}">${esc(g.name)}</option>`).join("")}</select><input id="ge" type="email" placeholder="بريد المشاركة"><div class="rb"><button class="btn" onclick="addM()">إضافة</button></div></div></div><br>`+h.slice(h.indexOf('<div class="card"><h3>المشاركات والخطط'))};
+const _nf=notif;notif=()=>_nf()+`<br><div class="card"><h3>إشعارات الخادم</h3>${NT.map(x=>`<div class="li"><b>${esc(x.title)}</b><br><span class="mu">${esc(x.body||"")}</span></div>`).join("")||"<p class='mu'>لا شيء</p>"}</div>`}
+async function boot(){let ok=false;try{ok=location.protocol.startsWith("http")&&(await fetch("/api/health")).ok}catch(e){}
+if(!ok){load();fillWho();go("home");return}
+live=true;U.length=0;R=[];RV=[];document.querySelector(".demo").style.display="none";liveInit();if(TOK)return enter();authUI()}
+boot();
+
+</script></body></html>
